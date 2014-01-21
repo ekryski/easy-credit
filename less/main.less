@@ -1,0 +1,284 @@
+@import 'knac/knacss';
+@import 'mixins';
+
+@grey: #EEE;
+@white: #FFF;
+@blue: #617EF0;
+@light-blue: #61C2F0;
+@beige: #FAF6EA;
+@green: #2ecc71;
+@red: #e74c3c;
+
+.centered {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+h1, h2, h3, h4, h5, p {
+  font-family: 'Alegreya Sans', 'Aria', sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 8rem;
+  color: darken(@grey, 50%)
+}
+
+.easy-credit {
+  padding: 10rem;
+  margin-top: 2rem;
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+  background: lighten(@grey, 4%);
+  .inner-shadow(0px, 0px, 5px, 0.4);
+}
+
+.credit-card {
+  position: relative;
+}
+
+.input-wrapper {
+  height: 5rem;
+  border: 1px solid #DDDDDD;
+  overflow: hidden;
+  padding: 5px 0 0 50px;
+  background: #FFF;
+  .inner-shadow(0px, 2px, 2px, 0.4);
+  .transition(all, 0.30s, ease-in-out);
+
+  &.valid.focus {
+    box-shadow: 0 0 5px lighten(@green, 10%);
+    border: 1px solid lighten(@green, 10%);
+  }
+
+  &.invalid.focus {
+    box-shadow: 0 0 5px lighten(@red, 20%);
+    border: 1px solid lighten(@red, 20%);
+  }
+}
+
+input {
+  height: 4rem;
+  padding: 0 1rem;
+  letter-spacing: 0.6rem;
+  outline: none;
+  border: none;
+  // border: 1px solid #DDDDDD;
+  .transition(all, 0.30s, ease-in-out);
+}
+
+input.card-number.slid-away {
+  margin-left: -230px;  
+}
+
+.btn {
+  color: darken(@white, 1%);
+  float: right;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: lighten(desaturate(@green, 15%), 15%);
+  border: 1px solid @green;
+  .transition(all, 0.20s, ease-in-out);
+
+  &.disabled {
+    background: @grey;
+    border: 1px solid #D3D3D3;
+
+    &:hover {
+      background: @grey;
+      border: 1px solid #D3D3D3;
+    }
+  }
+
+  &:hover {
+    background: lighten(desaturate(@green, 8%), 5%);
+    border: 1px solid @green;
+  }
+}
+
+.card-image-wrapper {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 60px;
+  height: 45px;
+  background: #FFF;
+}
+
+.card-image {
+  position: absolute;
+  width: 4rem;
+  height: 3rem;
+  top: 8px;
+  left: 8px;
+  padding: 2px;
+  .rounded(3px);
+
+  .gloss {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 0 28px 39px;
+    border-color: transparent transparent rgba(255, 255, 255, 0.08) transparent;
+    z-index: 10;
+  }
+
+  &.mastercard {
+    background: @blue;
+    border: 1px solid darken(@blue, 8%);
+    padding: 10px 2px;
+
+    .circle {
+      position: absolute;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      .rounded(9px);
+    }
+
+    .left {
+      left: 3px;
+      z-index: 2;
+      background: red;
+    }
+
+    .right {
+      right: 3px;
+      z-index: 1;
+      background: orange;
+    }
+
+    span.brand {
+      position: absolute;
+      color: @white;
+      font-size: 7px;
+      line-height: 8px;
+      z-index: 3;
+    }
+  }
+
+  &.visa {
+    background: @white;
+    border: 1px solid darken(@blue, 8%);
+    padding: 0;
+
+    .bar {
+      position: absolute;
+      height: 7px;
+    }
+
+    .upper {
+      top: 0;
+      background: @blue;
+    }
+
+    .lower {
+      bottom: 0;
+      background: orange;
+    }
+
+    span.brand {
+      height: 100%;
+      font-size: 10px;
+      line-height: 30px;
+      color: @blue;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+      display: block;
+    }
+  }
+
+  &.amex {
+    background: @light-blue;
+    border: 1px solid darken(@light-blue, 12%);
+    padding: 0;
+
+    span.brand {
+      height: 100%;
+      font-size: 9px;
+      line-height: 30px;
+      letter-spacing: 1px;
+      color: @white;
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+
+  &.discover {
+    background: @beige;
+    border: 1px solid darken(@beige, 12%);
+    padding: 0;
+
+    .triangle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 0 10px 20px;
+      border-color: transparent transparent orange transparent;
+    }
+
+    span.brand {
+      height: 100%;
+      font-size: 7px;
+      line-height: 24px;
+      color: black;
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+
+      span.o {
+        color: orange;
+      }
+    }
+  }
+
+  &.default-2 {
+    background: @grey;
+    border: 1px solid darken(@grey, 8%);
+    padding: 0;
+
+    .bar {
+      position: absolute;
+      top: 6px;
+      left: -1px;
+      height: 7px;
+      width: 4rem;
+      background: darken(@grey, 40%)
+    }
+  }
+
+  &.default {
+    background: @grey;
+    border: 1px solid darken(@grey, 8%);
+    
+    span {
+      margin: 0;
+      padding: 0;
+      color: lighten(@grey, 20%);
+      font-size: 3px;
+      line-height: 5px;
+      display: block;
+    }
+
+    span.card-number {
+      margin: 6px 0 4px 0;
+    }
+
+    span.card-name,
+    span.card-date {
+      // margin-left: 3px;
+    }
+  }
+}

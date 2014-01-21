@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Easy Credit</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/dist/main.css">
+  </head>
+  <body>
+    <div class="w80 center">
+      <h1 class="w60 center centered">Easy Credit</h1>
+      <div class="w60 center easy-credit">
+        <form action="" class="credit-card">
+          <div class="card-image-wrapper">
+            <div class="card-image default">
+              <div class="gloss"></div>
+              <span class="w100 centered card-number">5423 2315 1234 4496</span>
+              <span class="w50 card-name">John Doe</span>
+              <span class="w50 card-date">07/14</span>
+            </div>
+            <div class="card-image default-2 hidden">
+              <div class="gloss"></div>
+              <div class="bar w100"></div>
+            </div>
+            <div class="card-image mastercard hidden">
+              <div class="gloss"></div>
+              <div class="left circle"></div>
+              <div class="right circle"></div>
+              <span class="brand w100">Mastercard</span>
+            </div>
+            <div class="card-image visa hidden">
+              <div class="gloss"></div>
+              <div class="upper bar w100"></div>
+              <span class="brand w100">visa</span>
+              <div class="lower bar w100"></div>
+            </div>
+            <div class="card-image amex hidden">
+              <div class="gloss"></div>
+              <span class="brand w100">amex</span>
+            </div>
+            <div class="card-image discover hidden">
+              <div class="gloss"></div>
+              <span class="brand w100">disc<span class="o">o</span>ver</span>
+              <div class="triangle"></div>
+            </div>
+          </div>
+          <div class="input-wrapper w100">
+            <input type="numeric" class="card-number w80" name="card-number" required pattern="[0-9]{13,16}" placeholder="**** **** **** ****">
+            <input type="numeric" class="card-month-expiry w20" name="card-month-expiry" required pattern="[0-9]{2}" placeholder="MM">
+            <input type="numeric" class="card-year-expiry w20" name="card-year-expiry" required pattern="[0-9]{2}" placeholder="YY">
+            <input type="numeric" class="card-ccv w20" name="card-ccv" required pattern="[0-9]{3,4}" placeholder="***">
+          </div>
+          <button type="submit" class="btn">Pay</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/dist/index.js" type="text/javascript"></script>
+  </body>
+</html>

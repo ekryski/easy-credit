@@ -1,0 +1,25 @@
+{
+  "name": "easy-credit",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A simple credit card form",
+  "main": "src/index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ekryski/easy-credit.git"
+  },
+  "author": "Eric Kryski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekryski/easy-credit/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-util": "~2.2.12",
+    "gulp": "~3.4.0",
+    "gulp-uglify": "~0.1.0",
+    "gulp-csso": "~0.1.8",
+    "gulp-less": "~1.1.10"
+  }
+}
