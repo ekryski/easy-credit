@@ -3,6 +3,7 @@ var gutil = require('gulp-util');
 var less = require('gulp-less');
 var uglify = require('gulp-uglify');
 var csso = require('gulp-csso');
+var concat = require('gulp-concat');
 
 gulp.task('styles', function () {
   gulp.src('less/main.less')
@@ -13,7 +14,8 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function() {
   gulp.src('src/*.js')
-    .pipe(uglify())
+    // .pipe(uglify())
+    .pipe(concat('easy-credit.min.js'))
     .pipe(gulp.dest('dist'));
 });
 

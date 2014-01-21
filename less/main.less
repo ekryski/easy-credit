@@ -32,7 +32,7 @@ h1 {
   padding: 10rem;
   margin-top: 2rem;
   line-height: 2.5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   background: lighten(@grey, 4%);
   .inner-shadow(0px, 0px, 5px, 0.4);
 }
@@ -64,15 +64,15 @@ h1 {
 input {
   height: 4rem;
   padding: 0 1rem;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.4rem;
   outline: none;
   border: none;
-  // border: 1px solid #DDDDDD;
+  display: inline;
   .transition(all, 0.30s, ease-in-out);
 }
 
 input.card-number.slid-away {
-  margin-left: -230px;  
+  margin-left: -210px;  
 }
 
 .btn {
@@ -103,8 +103,8 @@ input.card-number.slid-away {
 .card-image-wrapper {
   position: absolute;
   top: 3px;
-  left: 3px;
-  width: 60px;
+  left: 2px;
+  width: 50px;
   height: 45px;
   background: #FFF;
 }
@@ -117,6 +117,17 @@ input.card-number.slid-away {
   left: 8px;
   padding: 2px;
   .rounded(3px);
+  .transform(rotateY(0deg));
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  .transition(all, 0.20s, ease-in-out);
+
+  &.flip {
+    .transform(rotateY(180deg));
+  }
 
   .gloss {
     position: absolute;
@@ -244,10 +255,15 @@ input.card-number.slid-away {
     }
   }
 
-  &.default-2 {
+  &.back {
     background: @grey;
     border: 1px solid darken(@grey, 8%);
     padding: 0;
+    .transform(rotateY(-180deg));
+
+    &.flip {
+      .transform(rotateY(0deg));
+    }
 
     .bar {
       position: absolute;
@@ -257,9 +273,19 @@ input.card-number.slid-away {
       width: 4rem;
       background: darken(@grey, 40%)
     }
+
+    .ccv {
+      position: absolute;
+      top: 11px;
+      right: 2px;
+      height: 7px;
+      width: 10px;
+      background: @white;
+      border: 1px solid @red;
+    }
   }
 
-  &.default {
+  &.unknown {
     background: @grey;
     border: 1px solid darken(@grey, 8%);
     
